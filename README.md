@@ -1,70 +1,209 @@
-# Getting Started with Create React App
+# 📱 Social Feed - Exercice React JSX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projet d'apprentissage React basé sur le cours **React ESD Paris - Jour 1**.
 
-## Available Scripts
+## 📋 Description
 
-In the project directory, you can run:
+Application React qui reproduit un fil d'actualité social (Social Feed) avec des posts utilisateurs. Ce projet illustre les concepts fondamentaux de React : **JSX**, **Props** et **Composants**.
 
-### `npm start`
+## 🎯 Objectifs pédagogiques
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ✅ Comprendre la syntaxe JSX
+- ✅ Utiliser les props pour passer des données entre composants
+- ✅ Créer des composants réutilisables et modulaires
+- ✅ Structurer une application React avec une architecture composants
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏗️ Architecture du projet
 
-### `npm test`
+### Structure des composants
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── App.js              # Composant principal
+├── App.css             # Styles globaux
+└── component/
+    ├── Post.jsx        # Composant de post (utilise Card et Button)
+    ├── Post.css
+    ├── Card.jsx        # Composant conteneur réutilisable
+    ├── Card.css
+    ├── Button.jsx      # Composant bouton réutilisable
+    └── Button.css
+```
 
-### `npm run build`
+### Composants
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### 🎴 **Card** (`component/Card.jsx`)
+Composant conteneur réutilisable qui gère le style de base des cartes (fond blanc, ombre, bordures arrondies).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Props :**
+- `children` : Contenu à afficher dans la carte
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### 🔘 **Button** (`component/Button.jsx`)
+Composant bouton réutilisable avec différentes variantes.
 
-### `npm run eject`
+**Props :**
+- `variant` : Type de bouton (`like`, `share`, `primary`, `secondary`)
+- `icon` : Emoji ou icône à afficher
+- `children` : Texte du bouton
+- `onClick` : Fonction de callback (optionnel)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Exemple d'utilisation :**
+```jsx
+<Button variant="like" icon="❤️">
+  5 Likes
+</Button>
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 📝 **Post** (`component/Post.jsx`)
+Composant qui affiche un post utilisateur. Utilise les composants `Card` et `Button`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Props :**
+- `nom` : Nom de l'utilisateur
+- `initiale` : Initiale pour l'avatar
+- `contenu` : Texte du post
+- `likes` : Nombre de likes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Exemple d'utilisation :**
+```jsx
+<Post
+  nom="Marie"
+  initiale="M"
+  contenu="Premier café de la journée ☕"
+  likes={2}
+/>
+```
 
-## Learn More
+## 🚀 Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prérequis
+- Node.js (version 14 ou supérieure)
+- npm ou yarn
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Étapes
 
-### Code Splitting
+1. **Cloner ou télécharger le projet**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. **Installer les dépendances**
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
+3. **Lancer l'application en mode développement**
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+L'application s'ouvrira automatiquement sur [http://localhost:3000](http://localhost:3000)
 
-### Making a Progressive Web App
+## 📜 Commandes disponibles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Commandes de développement
 
-### Advanced Configuration
+```bash
+# Démarrer le serveur de développement
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Lancer les tests
+npm test
 
-### Deployment
+# Construire l'application pour la production
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Génération de composants
 
-### `npm run build` fails to minify
+Un script personnalisé permet de générer automatiquement de nouveaux composants :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+# Créer un nouveau composant
+npm run component NomDuComposant
+```
+
+Cette commande génère automatiquement :
+- `src/component/NomDuComposant.jsx`
+- `src/component/NomDuComposant.css`
+
+## 🎨 Fonctionnalités
+
+### Interface utilisateur
+
+- **Header** : Titre "Social Feed" avec sous-titre
+- **Fond dégradé** : Dégradé violet vers bleu
+- **Posts** : Cartes blanches avec :
+  - Avatar circulaire avec initiale
+  - Nom de l'utilisateur
+  - Contenu du post
+  - Boutons d'action (Likes et Partages)
+
+### Données des posts
+
+L'application affiche actuellement 3 posts d'exemple :
+- **Marie** : "Premier café de la journée ☕" (2 likes)
+- **Thomas** : "Nouveau record personnel en salle de sport! 💪" (5 likes)
+- **Sophie** : "Weekend approche... Des plans pour sortir? 🎉" (62 likes)
+
+## 📚 Concepts React abordés
+
+### JSX (JavaScript XML)
+Syntaxe qui permet d'écrire du HTML-like dans JavaScript :
+```jsx
+const element = <h1>Bonjour React!</h1>;
+```
+
+### Props (Propriétés)
+Mécanisme pour passer des données d'un composant parent à un composant enfant :
+```jsx
+<Post nom="Marie" likes={2} />
+```
+
+### Composants
+Fonctions ou classes qui retournent du JSX pour créer des éléments réutilisables :
+```jsx
+const Button = ({ variant, children }) => {
+  return <button className={`btn btn-${variant}`}>{children}</button>;
+};
+```
+
+### Composition de composants
+Utiliser des composants à l'intérieur d'autres composants :
+```jsx
+<Card>
+  <Post nom="Marie" />
+</Card>
+```
+
+## 🛠️ Technologies utilisées
+
+- **React** 19.2.0
+- **React DOM** 19.2.0
+- **React Scripts** 5.0.1 (Create React App)
+- **CSS3** pour le styling
+
+## 📖 Ressources
+
+- [Documentation React](https://react.dev/)
+- [Create React App](https://create-react-app.dev/)
+- [JSX en profondeur](https://react.dev/learn/writing-markup-with-jsx)
+
+## 🎓 Exercices suggérés
+
+1. **Ajouter des événements** : Implémenter le clic sur les boutons pour incrémenter les likes
+2. **Ajouter un formulaire** : Permettre de créer de nouveaux posts
+3. **Gérer l'état** : Utiliser `useState` pour gérer dynamiquement les posts
+4. **Ajouter des animations** : Animer l'apparition des posts
+5. **Responsive design** : Adapter l'interface pour mobile
+
+## 📝 Notes
+
+- Les fichiers de composants utilisent l'extension `.jsx` pour mieux identifier le code JSX
+- L'architecture modulaire permet une réutilisation facile des composants
+- Les styles sont séparés par composant pour une meilleure organisation
+
+## 👤 Auteur
+
+Projet créé dans le cadre de la formation **React ESD Paris - Jour 1**.
+
+---
+
+**Bon code ! 🚀**
+# react-101
