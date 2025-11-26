@@ -1,6 +1,6 @@
 # 📱 Social Feed - Exercice React JSX
 
-Projet d'apprentissage React basé sur le cours **React ESD Paris - Jour 1**.
+Projet d'apprentissage React dispensé par J. Omiscar. 
 
 ## 📋 Description
 
@@ -8,14 +8,14 @@ Application React qui reproduit un fil d'actualité social (Social Feed) avec de
 
 ## 🎯 Objectifs pédagogiques
 
-- ✅ Comprendre la syntaxe JSX
-- ✅ Utiliser les props pour passer des données entre composants
-- ✅ Créer des composants réutilisables et modulaires
-- ✅ Structurer une application React avec une architecture composants
-- ✅ Gérer l'état avec `useState`
-- ✅ Gérer les événements utilisateur (clics, soumission de formulaire)
-- ✅ Valider et gérer les erreurs dans les formulaires
-- ✅ Créer des formulaires contrôlés
+-  Comprendre la syntaxe JSX
+-  Utiliser les props pour passer des données entre composants
+-  Créer des composants réutilisables et modulaires
+-  Structurer une application React avec une architecture composants
+-  Gérer l'état avec `useState`
+-  Gérer les événements utilisateur (clics, soumission de formulaire)
+-  Valider et gérer les erreurs dans les formulaires
+-  Créer des formulaires contrôlés
 
 ## 🏗️ Architecture du projet
 
@@ -351,7 +351,7 @@ Compteur mis à jour
 
 ## 👤 Auteur
 
-Projet créé dans le cadre de la formation **React ESD Paris - Jour 1**.
+Yasmina Cherkaoui.
 
 ---
 
