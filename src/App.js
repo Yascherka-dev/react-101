@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import './App.css';
 import Post from './component/Post';
 import FormulairePost from './component/FormulairePost';
+import Chronometre from './component/Chronometre';
+import ConnexionTitre from './component/ConnexionTitre';
+import { Tabs, Tab } from './component/Tabs';
 
 function App() {
+  // ÉTAT pour gérer le titre du header
+  const [titreHeader, setTitreHeader] = useState('React Exercices');
+
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -62,25 +68,38 @@ function App() {
       <header className="social-header">
         <h1 className="social-title">
           <span className="icon-phone">📱</span>
-          Social Feed
+          {titreHeader}
         </h1>
-        <p className="social-subtitle">Exercice JSX - Props et Events</p>
+        <p className="social-subtitle">Exercices JSX - Props, Events et Hooks</p>
       </header>
       <main className="social-feed">
-        <FormulairePost onAddPost={handleAddPost} />
-        {posts.map((post) => (
-          <Post
-            key={post.id}
-            id={post.id}
-            nom={post.nom}
-            initiale={post.initiale}
-            contenu={post.contenu}
-            likes={post.likes}
-            partages={post.partages}
-            onLike={handleLike}
-            onShare={handleShare}
-          />
-        ))}
+        <Tabs>
+          <Tab label="⏱️ Chronomètre">
+            <Chronometre />
+          </Tab>
+          <Tab label="🔐 Effets Conditionnels">
+            <ConnexionTitre 
+              onTitreChange={setTitreHeader}
+              titreOriginal="React Exercices"
+            />
+          </Tab>
+          <Tab label="📱 Social Feed">
+            <FormulairePost onAddPost={handleAddPost} />
+            {posts.map((post) => (
+              <Post
+                key={post.id}
+                id={post.id}
+                nom={post.nom}
+                initiale={post.initiale}
+                contenu={post.contenu}
+                likes={post.likes}
+                partages={post.partages}
+                onLike={handleLike}
+                onShare={handleShare}
+              />
+            ))}
+          </Tab>
+        </Tabs>
       </main>
     </div>
   );
