@@ -1,0 +1,91 @@
+.chronometre {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.chronometre-titre {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.chronometre-affichage {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  color: #667eea;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 8px;
+  letter-spacing: 2px;
+}
+
+.chronometre-controles {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-chrono {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 120px;
+}
+
+.btn-chrono:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-chrono:active {
+  transform: translateY(0);
+}
+
+.btn-start {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-start:hover {
+  background-color: #229954;
+}
+
+.btn-pause {
+  background-color: #f39c12;
+  color: white;
+}
+
+.btn-pause:hover {
+  background-color: #e67e22;
+}
+
+.btn-resume {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-resume:hover {
+  background-color: #2980b9;
+}
+
+.btn-reset {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-reset:hover {
+  background-color: #c0392b;
+}
+
